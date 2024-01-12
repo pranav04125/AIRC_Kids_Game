@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.login-header h1 {
+    color: #ff914d;
+    font-size: 48px;
+}
+
+.up-style {
+    color: #4bacc6;
+}
+
+.input-group {
+    margin: 20px;
+}
+
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 50%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #e07a3d;
+}
+
+.forgot-signup {
+    padding-top: 20px;
+}
+
+.forgot-signup a {
+    display: block;
+    color: #4bacc6;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.kids-dragon-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Add additional styles for responsive design and other elements */
+
+
+
+
+

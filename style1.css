@@ -1,0 +1,59 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.signup-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.signup-header h1 {
+    color: #333;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin: 5px auto;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    display: block;
+}
+
+button {
+    width: calc(100% - 30px);
+    padding: 15px;
+    background-color: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #e07a3d;
+}
+
+/* Responsive design and other elements */
+@media (max-width: 768px) {
+    .signup-container {
+        width: 90%;
+    }
+}
+
+/* Additional styles for other elements like alerts for validation errors */
