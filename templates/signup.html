@@ -9,12 +9,12 @@
         <div class="signup-header">
             <h1>Sign Up</h1>
         </div>
-        <form action="signup.php" method="post">
+        <form action="{{ url_for("signup") }}" method="post">
             <div class="input-group">
                 <input type="text" id="new_username" name="new_username" placeholder="Choose a username" required>
             </div>
             <div class="input-group">
-                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <input type="email" id="email" name="email" placeholder="Your email" required)">
             </div>
             <div class="input-group">
                 <input type="password" id="new_password" name="new_password" placeholder="Create a password" required>
@@ -23,6 +23,15 @@
                 <button type="submit">Sign Up</button>
             </div>
         </form>
+
+        {% if email_exists %}
+            <p style="color:red">Oops! The email is already linked to another account. Please try logging in.</p>
+        {% endif %}
+
+        {% if username_exists %}
+            <p style="color:red">Oops! The username is already taken. Please choose a new one</p>
+        {% endif %}
+
     </div>
 </body>
 </html>
