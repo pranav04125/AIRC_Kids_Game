@@ -62,7 +62,7 @@ def signup():
     """
     SignUp page that checks if username and email already exists and adds to database if it doesn't before redirecting to login Page
     """
-    print(session.items(), request.method)
+
     if "username_alr_exists" in session:
         username_exists = True  # For display of already used credentials message on signup page (Only if signup retry)
         session.pop("username_alr_exists", None)
@@ -102,6 +102,7 @@ def signup():
         return redirect("login")
 
     return render_template("signup.html", username_exists=username_exists, email_exists=email_exists)
+
 
 @app.route("/profile")
 def profile():
