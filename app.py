@@ -107,15 +107,26 @@ def signup():
 @app.route("/profile")
 def profile():
     """
-    Temporary user profile page for testing purposes
+    Temporary user profile page for testing purposes.
+    Redirects to login page if the session data is not present.
     """
 
-    # Check if user is logged in and redirect to login page if not
-    if "user_id" not in session:
+    # Check if the user is logged in by verifying the presence of session data.
+    if not session.get("user_id"):
         return redirect(url_for("login"))
 
-    return f"<h1>Logged in as {session['username']} with email {session["user_email"]} and user id {session["user_id"]}<h1>"
+    return f"<h1>Logged in as {session['username']} with email {session['user_email']} and user id {session['user_id']}<h1>"
 
+@app.route("/logout")
+def logout():
+    """
+    Logout the user by clearing the session.
+    """
+    # Clear all data stored in session
+    session.clear()
+    
+    # Redirect to the login page
+    return redirect(url_for("login"))
 
 if __name__ == '__main__':
     app.run()

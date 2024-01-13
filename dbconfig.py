@@ -4,7 +4,7 @@ import mysql.connector
 db_conf = {
     "host" : "localhost",
     "user" : "root",
-    "password" : "pranav05",
+    "password" : "password",
     "database" : "AIRC_Kids_Game"
 }
 

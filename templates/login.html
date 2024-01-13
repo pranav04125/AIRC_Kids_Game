@@ -2,14 +2,14 @@
 <html>
 <head>
     <title>Login - Mental Up</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/login_page_style.css") }}">
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename="css/login_page_style.css") }}>
 </head>
 <body>
 <div class="login-container">
     <div class="login-header">
         <h1>MENTAL <span class="up-style">Up</span></h1>
     </div>
-    <form action="{{ url_for("login") }}" method="post">
+    <form action= "{{url_for('login')}}"  method="post">
         <div class="input-group">
             <input type="text" id="username" name="username" placeholder="Username" required>
         </div>
@@ -30,11 +30,10 @@
     {% endif %}
     <div class="forgot-signup">
         <a href="#">Forgot Password?</a>
-        <a href="{{ url_for("signup") }}">Don't have account yet? Sign Up</a>
+        <a href="{{url_for('signup')}}">Don't have account yet? Sign Up</a>
     </div>
 </div>
 <div class="kids-dragon-image">
-    <!-- Image of kids on dragon goes here -->
-</div>
+    <img src="../static/css/Media/kids.png" alt="">
 </body>
 </html>
