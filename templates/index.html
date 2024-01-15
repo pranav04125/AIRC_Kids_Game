@@ -108,16 +108,16 @@
 <body>
     <div class="welcome-container">
         <div class="logo-container">
-            <a href="index.html"><img src="logo_2.png"></a>
+            <a href="index.html"><img src="../static/css/Media/logo_2.png"></a>
         </div>
         
         
         
         <div class="language-selection">
             <h2>Select your language:</h2>
-            <a href="account.html"><button id="english" class="language-button" action="account.html">English  <img class="flag" src="Vertical_Flag_of_the_United_Kingdom_(1-2).svg.png"></button></a>
-            <a href="account.html"><button id="french" class="language-button">Français  <img class="flag" src="french.png"></button>
-            <a href="account.html"><button id="arabic" class="language-button">عربي  <img class="flag" src="arabic.svg"></button>
+            <a href="{{url_for('account')}}"><button id="english" class="language-button" action="account.html">English  <img class="flag" src="../static/css/Media/Vertical_Flag_of_the_United_Kingdom_(1-2).svg.png"></button></a>
+            <a href="{{url_for('account')}}"><button id="french" class="language-button">Français  <img class="flag" src="../static/css/Media/french.png"></button>
+            <a href="{{url_for('account')}}"><button id="arabic" class="language-button">عربي  <img class="flag" src="../static/css/Media/arabic.svg"></button>
         </div>
         <div class="image-container">
             <!-- Include the image of children on a dragon here -->

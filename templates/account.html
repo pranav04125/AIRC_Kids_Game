@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">    
     <title>Login Selection</title>
     <style>
         body, html {
@@ -110,13 +109,14 @@
 <body>
     <div class="welcome-container">
         <div class="logo-container">
-            <a href="index.html"><img src="logo_2.png"></a>
+            <a href="index.html"><img src="../static/css/Media/logo_2.png"></a>
         </div>
         <div class="language-selection">
             <h2>Choose Your Login: </h2>
-            <button class="login-option parent-login">Parent Login</button>
-            <button class="login-option student-login">Student Login</button>
+            <a href="{{url_for('login')}}"><button class="login-option parent-login" >Parent Login</button></a>
+            <a href="{{url_for('login')}}"></a><button class="login-option student-login" href="{{url_for('login')}}" >Student Login</button></a>
         </div>
     </div>
+    
 </body>
 </html>

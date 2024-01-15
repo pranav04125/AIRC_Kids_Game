@@ -8,11 +8,22 @@ app.secret_key = "random_secret_key"
 
 
 @app.route('/')
-def homepage():
+def welcome():
     """
     Index page, temporarily redirects directly to login
     """
-    return redirect(url_for("login"))
+    return render_template("index.html")
+
+
+
+@app.route("/home")
+def home():
+    return render_template("login.html")
+
+@app.route("/account")
+def account():
+    return render_template("account.html")
+
 
 
 @app.route("/login", methods=["POST", "GET"])
@@ -106,16 +117,13 @@ def signup():
 
 @app.route("/profile")
 def profile():
-    """
-    Temporary user profile page for testing purposes.
-    Redirects to login page if the session data is not present.
-    """
+    
 
     # Check if the user is logged in by verifying the presence of session data.
     if not session.get("user_id"):
         return redirect(url_for("login"))
 
-    return f"<h1>Logged in as {session['username']} with email {session['user_email']} and user id {session['user_id']}<h1>"
+    return render_template("homepage.html")
 
 @app.route("/logout")
 def logout():
@@ -127,6 +135,10 @@ def logout():
     
     # Redirect to the login page
     return redirect(url_for("login"))
+
+@app.route("/game")
+def game():
+    return render_template("game.html")
 
 if __name__ == '__main__':
     app.run()
