@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - LGH - Little Green Heroes</title>
+    <style>
+        body, html {
+    height: 100%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+
+.welcome-container .language-selection{
+
+    padding-top: 200px;
+    padding-bottom: 500px;
+}
+
+.logo-container img{
+    transition: transform 0.5s ease;
+    margin: 0;
+    
+}
+
+.logo-container img:hover  {
+    transform: scale(1.1);
+}
+
+.language-selection  {
+    background-color: #f0f0f0;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.language-selection h2 {
+    margin: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    
+}
+
+.language-button, .login-option {
+    padding: 10px 20px;
+    margin: 10px ;
+    border: none;
+    border-radius: 20px;
+    background-color: #e07a3d; /* Button color */
+    color: white; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    outline: none;
+    max-height: 10vh;
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    max-width: 100%;
+
+    box-shadow: 5px 5px 5px rgba(10,10,10,.15);
+    position: relative;
+    
+}
+
+.flag{
+    
+    border: none;
+    border-radius: 20px;
+    max-width: 4vw;
+    max-height: 3vh;
+}
+
+.language-button:hover, .language-button:focus, .login-option:hover, .login-option:focus {
+    background-color: #ff914d; /* Lighter shade on hover/focus */
+    transform: translateY(-5px);
+}
+
+
+.image-container {
+    padding-top: 20px;
+    /* Use a class or inline style to include the image */
+}
+
+/* Additional styles for responsive design */
+@media (max-width: 768px) {
+    .logo-container h1 {
+        font-size: 32px;
+    }
+
+    .language-selection p {
+        font-size: 18px;
+    }
+
+    .language-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="logo-container">
+            <a href="index.html"><img src="logo_2.png"></a>
+        </div>
+        
+        
+        
+        <div class="language-selection">
+            <h2>Select your language:</h2>
+            <a href="account.html"><button id="english" class="language-button" action="account.html">English  <img class="flag" src="Vertical_Flag_of_the_United_Kingdom_(1-2).svg.png"></button></a>
+            <a href="account.html"><button id="french" class="language-button">Français  <img class="flag" src="french.png"></button>
+            <a href="account.html"><button id="arabic" class="language-button">عربي  <img class="flag" src="arabic.svg"></button>
+        </div>
+        <div class="image-container">
+            <!-- Include the image of children on a dragon here -->
+        </div>
+    </div>
+</body>
+</html>

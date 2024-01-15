@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Learning App</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .header div {
+    display: flex;
+    align-items: center;
+  }
+  .header img {
+    margin-left: 10px;
+  }
+  .header .xp {
+    font-size: 1.2em;
+    color: #333;
+  }
+  .category {
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .category-title {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .unit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #eef2f1;
+    border-radius: 8px;
+  }
+  .unit:last-child {
+    margin-bottom: 0;
+  }
+  .unit-locked {
+    filter: grayscale(100%);
+  }
+  .unit-title {
+    font-size: 1em;
+    color: #333;
+    margin: 0;
+  }
+  .progress-bar-container {
+    width: 60%;
+  }
+  .progress-bar {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .progress {
+    height: 10px;
+    background-color: #ffd700;
+    border-radius: 5px;
+    width: 0; /* Dynamically set this with inline styles based on progress */
+  }
+  .navigation {
+  position: fixed; /* Makes the navigation bar stay at the same spot on the screen */
+  bottom: 0; /* Positions the navigation bar at the bottom */
+  left: 0;
+  width: 100%; /* Ensures the navigation bar extends across the full width of the screen */
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  z-index: 1000; /* Ensures the navigation bar is above all other content */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 70px; /* Add padding to the bottom equal to the height of the navigation bar */
+}
+  .navigation img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .coin {
+    height: 30px;
+    width: 30px;
+  }
+  .nav-link {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits color from parent elements, if any */
+}
+
+.xp{
+    text-align: center;
+}
+
+.nav-icon {
+  width: 30px; /* Set a fixed width for the icons */
+  height: 30px; /* Set a fixed height for the icons */
+  transition: transform 0.3s ease; /* Smooth transformation
+when interacted with */
+}
+
+.nav-icon:hover,.nav-icon:focus {
+    transform: scale(1.1); /* Slightly enlarges the icons when hovered or focused for visual feedback */
+}
+
+/* Since it's a kids app, we can add some more playful transitions */
+.nav-icon:active {
+    transform: scale(0.9); /* Slightly shrinks the icons when clicked/tapped for a button-like effect */
+}
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <strong>3</strong>
+      <img class="coin" src="../static/css/Media/dollar.png" alt="Coins" />
+    </div>
+    <div class="xp">
+      <strong id="xp">1432 XP</strong>
+    </div>
+    <div>
+        <img src="heart-icon.png" alt="Lives" />
+        <img src="empty-heart-icon.png" alt="Empty Life" />
+      </div>
+    </div>
+  
+    <div class="category">
+      <h2 class="category-title">Logical Reasoning</h2>
+      <div class="unit">
+        <h3 class="unit-title">Unit 1</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 45%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="unit unit-locked">
+        <h3 class="unit-title">Unit 2</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+      <!-- More units -->
+    </div>
+  
+    <!-- Repeat for other categories -->
+  
+    <div class="category">
+      <h2 class="category-title">Artistic Thinking</h2>
+      <div class="unit">
+        <h3 class="unit-title">Unit 1</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 45%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="unit unit-locked">
+        <h3 class="unit-title">Unit 2</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="category">
+      <h2 class="category-title">Verbal Skills</h2>
+      <div class="unit">
+        <h3 class="unit-title">Unit 1</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 45%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="unit unit-locked">
+        <h3 class="unit-title">Unit 2</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+        <h2 class="category-title">Verbal Skills</h2>
+        <div class="unit">
+          <h3 class="unit-title">Unit 1</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress" style="width: 45%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="unit unit-locked">
+          <h3 class="unit-title">Unit 2</h3>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    <div class="navigation">
+    <!-- Navigation icons -->
+    <a href="#home" class="nav-link">
+        <img src="home-icon.png" alt="Home" class="nav-icon" />
+    </a>
+    <a href="#refresh" class="nav-link">
+        <img src="refresh-icon.png" alt="Refresh" class="nav-icon" />
+    </a>
+    <a href="#user" class="nav-link">
+        <img src="user-icon.png" alt="User" class="nav-icon" />
+    </a>
+    </div>
+    
+  
+  </body>
+  </html>
+  

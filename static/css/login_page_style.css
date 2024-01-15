@@ -65,6 +65,17 @@ button:hover {
     width: 100%;
     text-align: center;
 }
+.kids-dragon-image {
+    position: fixed;
+    top: 27em;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.kids-dragon-image img{
+    width: 23em;
+}
 
 /* Add additional styles for responsive design and other elements */
 

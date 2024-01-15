@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Weather Dress-Up Game</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            font-family: Arial, sans-serif;
+        }
+
+        #weather-buttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        #weather-buttons button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #game-area {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .clothing-item {
+            position: absolute;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .clothing-item.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .feedback-sign {
+            position: absolute;
+            display: none;
+            font-size: 2em;
+            color: green;
+            pointer-events: none;
+        }
+
+        .cross {
+            color: red;
+        }
+
+        .score {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            padding: 5px;
+
+            text-align: center;
+        }
+        .score-label{
+            border-bottom: 2px solid;
+            padding-bottom: 5px;
+        }
+        .score-value{
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="weather-buttons">
+    <button onclick="selectWeather('sunny')">Sunny</button>
+    <button onclick="selectWeather('rainy')">Rainy</button>
+    <button onclick="selectWeather('windy')">Windy</button>
+    <div class="score">
+        <div class="score-label">Score</div>
+        <div id="score-value" class="score-value">0</div>
+    </div>
+</div>
+
+<div id="game-area">
+    <img src="sun-hat.png" alt="Sun Hat" class="clothing-item sunny" onclick="selectClothing(this, 'sunny')"
+         style="top: 10px; left: 10px;">
+    <img src="rain-coat.png" alt="Rain Coat" class="clothing-item rainy" onclick="selectClothing(this, 'rainy')"
+         style="top: 10px; left: 100px;">
+
+    <span id="tick-mark" class="feedback-sign">&#10003;</span>
+    <span id="cross-mark" class="feedback-sign cross">&#10007;</span>
+</div>
+
+<script>
+    let selectedWeather = '';
+    let score = 0;
+    let numberClothes = 0;
+
+    document.addEventListener("DOMContentLoaded", function (){
+        const clothes = document.getElementsByClassName("clothing-item");
+        numberClothes = clothes.length;
+    });
+
+    function selectWeather(weather) {
+        selectedWeather = weather;
+    }
+
+    function selectClothing(element, weather) {
+        const tickMark = document.getElementById('tick-mark');
+        const crossMark = document.getElementById('cross-mark');
+        const scoreBoard = document.getElementById('score-value');
+        if (selectedWeather === weather) {
+            element.style.display = 'none'; // Hide the item
+            tickMark.style.display = 'block';
+            tickMark.style.left = element.style.left; // Position tick at the item's position
+            tickMark.style.top = element.style.top;
+            setTimeout(() => {
+                tickMark.style.display = 'none';
+            }, 1000); // Hide tick after 1 second
+
+            score++;
+            score++;
+            numberClothes--;
+        } else {
+            crossMark.style.display = 'block';
+            crossMark.style.left = element.style.left; // Position cross at the item's position
+            crossMark.style.top = element.style.top;
+            setTimeout(() => {
+                crossMark.style.display = 'none';
+            }, 1000); // Hide cross after 1 second
+            score--;
+        }
+        scoreBoard.textContent = score.toString();
+
+        if (numberClothes <= 0){
+            document.getElementsByTagName("body")[0].innerHTML = "<p>You finished with a score of " + score.toString() + ".</p>";
+        }
+    }
+</script>
+</body>
+</html>
